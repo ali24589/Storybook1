@@ -1,7 +1,6 @@
 export interface InputProps {
   type:
     | "button"
-    | "checkbox"
     | "color"
     | "date"
     | "datetime-local"
@@ -12,7 +11,6 @@ export interface InputProps {
     | "month"
     | "number"
     | "password"
-    | "radio"
     | "range"
     | "reset"
     | "search"

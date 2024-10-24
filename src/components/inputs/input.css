@@ -1,11 +1,11 @@
-.input {
+.input input {
   border: none;
   outline: 0px;
   background: none;
 }
 .buttonVariants-Rounded {
   border: 1px solid;
-  border-radius: 9999px;
+  border-radius:45px;
   padding: 8px;
   outline: none;
   width: fit-content;

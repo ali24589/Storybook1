@@ -12,7 +12,7 @@ const Input: React.FC<InputProps> = ({
   onChange,
   isDisabled = false,
 }) => {
-  const buttonType = type === "text" ? "buttonType-text" : `buttonType-${type}`;
+  
   const buttonVariants =
     variants === "Plain"
       ? "buttonVariants-Plain"
@@ -23,15 +23,14 @@ const Input: React.FC<InputProps> = ({
 
   return (
     <>
-      <label className="text-green-500">{type}</label>
-      <div className={[buttonType, buttonVariants, buttonStates].join(" ")}>
+      
+      <div className={['input',buttonVariants, buttonStates].join(" ")}>
         {Icon && iconPosition === "Start" && <Icon />}
         <input
           type={type}
           placeholder={placeholder}
           disabled={isDisabled}
           onChange={onChange}
-         className='input'
         />
         {Icon && iconPosition === "End" && <Icon />}
       </div>
