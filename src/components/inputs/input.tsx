@@ -8,7 +8,7 @@ const Input: React.FC<InputProps> = ({
   variants = "Plain",
   states = "Normal",
   icon: Icon,
-  iconPosition='End',
+  iconPosition = "End",
   onChange,
   isDisabled = false,
 }) => {
@@ -19,19 +19,19 @@ const Input: React.FC<InputProps> = ({
       : `buttonVariants-${variants}`;
   const buttonStates =
     states === "Normal" ? "buttonStates-Normal" : `buttonStates-${states}`;
-    
+   
 
   return (
     <>
       <label className="text-green-500">{type}</label>
-      <div >
+      <div className={[buttonType, buttonVariants, buttonStates].join(" ")}>
         {Icon && iconPosition === "Start" && <Icon />}
         <input
           type={type}
           placeholder={placeholder}
           disabled={isDisabled}
           onChange={onChange}
-          className={[buttonType, buttonVariants, buttonStates].join(" ")}
+         className='input'
         />
         {Icon && iconPosition === "End" && <Icon />}
       </div>

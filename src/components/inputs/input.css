@@ -1,28 +1,40 @@
+.input {
+  border: none;
+  outline: 0px;
+  background: none;
+}
 .buttonVariants-Rounded {
-    border: 1px solid; 
-    border-radius: 9999px;     
-    padding: 10px 20px;        
-    outline: none;              
-   
-    transition: box-shadow 0.3s ease-in-out;   
+  border: 1px solid;
+  border-radius: 9999px;
+  padding: 8px;
+  outline: none;
+  width: fit-content;
+  display: flex;
+  space-x: 2px;
+  align-items: center;
+  justify-content: center;
 }
 .buttonVariants-Plain {
-    border: 1px solid;      
-    padding: 10px 20px;        
-    outline: none;              
-    
-    transition: box-shadow 0.3s ease-in-out;   
+  border: 1px solid;
+  padding: 8px;
+  outline: none;
+  width: fit-content;
+  display: flex;
+  space-x: 2px;
+  align-items: center;
 }
 
 .buttonStates-Hover:hover {
-    background-color: lightgray;
+  background-color: lightgray;
 }
-.buttonStates-Error{
-    border-color:red;
+.buttonStates-Error {
+  border-color: red;
+  color: red;
 }
-.buttonStates-Valid{
-    border-color:lightgreen;
+.buttonStates-Valid {
+  border-color: lightgreen;
+  color: lightgreen;
 }
-.buttonStates-Focus{
-    background-color: lightgray;   
+.buttonStates-Focus {
+  background-color: lightgray;
 }
