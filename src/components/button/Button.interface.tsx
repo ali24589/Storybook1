@@ -10,5 +10,4 @@ export interface ButtonProps {
     icon?: React.ElementType,
     variant?:'primary' | 'secondary' | 'delete',
     iconPosition?:'left' | 'right'
-    
 }

@@ -14,16 +14,16 @@ const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const mode =
-    variant === "primary"
-      ? "storybook-button--primary"
+    variant === "secondary"
+      ? "storybook-button--secondary"
       : `storybook-button--${variant}`;
 
   return (
     <>
-      {isDisabled ? (
+      
         <button
           type="button"
-          disabled
+          disabled={isDisabled}
           className={[
             "storybook-button",
             `storybook-button--${size}`,
@@ -38,24 +38,8 @@ const Button: React.FC<ButtonProps> = ({
           {label}
           {Icon && iconPosition === "right" && <Icon />}
         </button>
-      ) : (
-        <button
-          type="button"
-          className={[
-            "storybook-button",
-            `storybook-button--${size}`,
-            mode,
-            `storybook-button--${iconPosition}`,
-          ].join(" ")}
-          style={{ backgroundColor }}
-          onClick={onClick}
-          {...props}
-        >
-          {Icon && iconPosition === "left" && <Icon />}
-          {label}
-          {Icon && iconPosition === "right" && <Icon />}
-        </button>
-      )}
+      
+        
     </>
   );
 };
