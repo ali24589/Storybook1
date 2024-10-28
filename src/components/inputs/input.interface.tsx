@@ -28,5 +28,5 @@ export interface InputProps {
   onChange?: () => void;
   isDisabled?: boolean;
   placeholder?: string;
-  
+  dataTestId?:string;
 }

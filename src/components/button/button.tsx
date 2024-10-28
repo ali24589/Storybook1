@@ -11,6 +11,8 @@ const Button: React.FC<ButtonProps> = ({
   variant,
   iconPosition,
   icon: Icon,
+  dataTestId,
+  type,
   ...props
 }) => {
   const mode =
@@ -22,7 +24,7 @@ const Button: React.FC<ButtonProps> = ({
     <>
       
         <button
-          type="button"
+          type={type}
           disabled={isDisabled}
           className={[
             "storybook-button",
@@ -33,6 +35,7 @@ const Button: React.FC<ButtonProps> = ({
           style={{ backgroundColor }}
           onClick={onClick}
           {...props}
+          data-testId={dataTestId}
         >
           {Icon && iconPosition === "left" && <Icon />}
           {label}
