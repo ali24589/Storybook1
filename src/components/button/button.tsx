@@ -22,27 +22,25 @@ const Button: React.FC<ButtonProps> = ({
 
   return (
     <>
-      
-        <button
-          type={type}
-          disabled={isDisabled}
-          className={[
-            "storybook-button",
-            `storybook-button--${size}`,
-            mode,
-            `storybook-button--${iconPosition}`,
-          ].join(" ")}
-          style={{ backgroundColor }}
-          onClick={onClick}
-          {...props}
-          data-testId={dataTestId}
-        >
-          {Icon && iconPosition === "left" && <Icon />}
-          {label}
-          {Icon && iconPosition === "right" && <Icon />}
-        </button>
-      
-        
+      <button
+        type={type}
+       
+        disabled={isDisabled}
+        className={[
+          "storybook-button",
+          `storybook-button--${size}`,
+          mode,
+          `storybook-button--${iconPosition}`,
+        ].join(" ")}
+        style={{ backgroundColor }}
+        onClick={onClick}
+        {...props}
+        data-testId={dataTestId}
+      >
+        {Icon && iconPosition === "left" && <Icon />}
+        {label}
+        {Icon && iconPosition === "right" && <Icon />}
+      </button>
     </>
   );
 };
