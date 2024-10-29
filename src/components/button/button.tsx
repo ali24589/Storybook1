@@ -3,43 +3,44 @@ import { ButtonProps } from "./Button.interface";
 import "./Button.css";
 
 const Button: React.FC<ButtonProps> = ({
-  label,
-  size,
-  backgroundColor,
+  label='button',
+  size='small',
   onClick,
-  isDisabled,
-  variant,
-  iconPosition,
+  isDisabled=false,
+  variant='primary',
+  iconPosition='left',
   icon: Icon,
-  dataTestId,
-  type,
+  testId,
+  type='button',
+  className,
   ...props
 }) => {
   const mode =
     variant === "secondary"
-      ? "storybook-button--secondary"
-      : `storybook-button--${variant}`;
+      ? "button-secondary"
+      : `button-${variant}`;
 
   return (
     <>
       <button
-        type={type}
-       
+         type={type}
+      
         disabled={isDisabled}
+        
         className={[
-          "storybook-button",
-          `storybook-button--${size}`,
+          "button",
+          `button-${size}`,
           mode,
-          `storybook-button--${iconPosition}`,
+          `button-${iconPosition}`,
+          className && className
         ].join(" ")}
-        style={{ backgroundColor }}
         onClick={onClick}
+        data-testid={testId}
         {...props}
-        data-testId={dataTestId}
       >
-        {Icon && iconPosition === "left" && <Icon />}
+        {Icon && iconPosition === "left" && <Icon data-testId='icon' />}
         {label}
-        {Icon && iconPosition === "right" && <Icon />}
+        {Icon && iconPosition === "right" && <Icon data-testId='icon' />}
       </button>
     </>
   );
