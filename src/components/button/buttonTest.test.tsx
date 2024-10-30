@@ -55,7 +55,6 @@ describe("Testing button component", () => {
       const buttonElement = screen.getByTestId("btn-reset");
       expect(buttonElement).toHaveAttribute('type',"reset");
     });
-
   });
 
   //testing the enabling of button
