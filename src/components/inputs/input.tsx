@@ -4,7 +4,7 @@ import "./input.css";
 
 const Input: React.FC<InputProps> = ({
   type = "text",
-  placeholder=`Enter ${type}`,
+  placeholder = `Enter ${type}`,
   variants = "Plain",
   states = "Normal",
   icon: Icon,
@@ -13,16 +13,17 @@ const Input: React.FC<InputProps> = ({
   isDisabled = false,
   dataTestId,
 }) => {
-  const buttonVariants =
-    variants === "Plain"
-      ? "buttonVariants-Plain"
-      : `buttonVariants-${variants}`;
-  const buttonStates =
-    states === "Normal" ? "buttonStates-Normal" : `buttonStates-${states}`;
+  const inputVariants =
+    variants === "Plain" ? "inputVariants-Plain" : `inputVariants-${variants}`;
+  const inputStates =
+    states === "Normal" ? "inputStates-Normal" : `inputStates-${states}`;
 
   return (
     <>
-      <div className={["input", buttonVariants, buttonStates].join(" ")} >
+      <div
+        className={["input", inputVariants, inputStates].join(" ")}
+        data-testId="container-div"
+      >
         {Icon && iconPosition === "Start" && <Icon />}
         <input
           type={type}

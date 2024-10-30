@@ -124,13 +124,13 @@ describe("Testing button component", () => {
 
   //testing iconed button
   test('testing iconed button',()=>{
-    render(<Button label='Click Me' icon={IoMdAdd}  testId="btn-icon" />)
+    render(<Button label='Click Me' icon={IoMdAdd} iconPosition="left"  testId="btn-icon" />)
     screen.debug()
     const buttonElement=screen.getByTestId('btn-icon')
     expect(buttonElement).toHaveTextContent('Click Me')
-    // const iconElement=screen.getByTestId('icon')
-    // expect(iconElement).toHaveAttribute('fill')
-    // expect(buttonElement).toContainElement(iconElement)
+     const iconElement=screen.getByTestId('icon')
+     expect(iconElement).toBeInTheDocument()
+     expect(buttonElement).toContainElement(iconElement)
 
   })
 });

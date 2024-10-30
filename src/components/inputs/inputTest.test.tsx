@@ -79,4 +79,48 @@ describe("Testing input element", () => {
     fireEvent.change(inputElement,{target:{value:'123'}})
     expect(handleChange).toHaveBeenCalledTimes(1)
   })
+
+  //testing variants of input
+  describe('testing variants of input',()=>{
+    test('testing Plain input',()=>{
+      render(<div><Input type="text" variants="Plain" dataTestId=""/></div>)
+      const containerElement=screen.getByTestId('container-div')
+      expect(containerElement).toHaveClass('inputVariants-Plain')
+    })
+    test('testing Rounded input',()=>{
+      render(<div><Input type="text" variants="Rounded" dataTestId=""/></div>)
+      const containerElement=screen.getByTestId('container-div')
+      expect(containerElement).toHaveClass('inputVariants-Rounded')
+    })
+  })
+
+  //testing states of input
+  describe('testing states of input',()=>{
+    test('testing Normal state of input',()=>{
+      render(<div><Input type="text" states="Normal" dataTestId=""/></div>)
+      const containerElement=screen.getByTestId('container-div')
+      expect(containerElement).toHaveClass('inputStates-Normal')
+    })
+    test('testing Hover state of input',()=>{
+      render(<div><Input type="text" states="Hover" dataTestId=""/></div>)
+      screen.debug()
+      const containerElement=screen.getByTestId('container-div')
+      expect(containerElement).toHaveClass('inputStates-Hover')
+    })
+    test('testing Focus state of input',()=>{
+      render(<div><Input type="text" states="Focus" dataTestId=""/></div>)
+      const containerElement=screen.getByTestId('container-div')
+      expect(containerElement).toHaveClass('inputStates-Focus')
+    })
+    test('testing Error state of input',()=>{
+      render(<div><Input type="text" states="Error" dataTestId=""/></div>)
+      const containerElement=screen.getByTestId('container-div')
+      expect(containerElement).toHaveClass('inputStates-Error')
+    })
+    test('testing Valid state of input',()=>{
+      render(<div><Input type="text" states="Valid" dataTestId=""/></div>)
+      const containerElement=screen.getByTestId('container-div')
+      expect(containerElement).toHaveClass('inputStates-Valid')
+    })
+  })
 });
