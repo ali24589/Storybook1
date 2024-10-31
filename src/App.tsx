@@ -1,14 +1,10 @@
-import './App.css'
-import  Button  from './components/button/button'
-import { IoMdSend } from "react-icons/io";
-import Input from './components/inputs/input';
+import SignUp from './components/signUp/signUp';
 
 function App() {
 
   return (
    <>
-   <Button label='Submit Now' icon={IoMdSend} iconPosition='left' />
-   <Input type='color'/>
+   <SignUp nameType='text' passwordType='password' btnLabel='sign Up' />
    </>
   )
 }

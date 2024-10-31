@@ -1,11 +1,10 @@
 import React from "react";
 import { InputProps } from "./input.interface";
-import './input.css'
-
+import "./input.css";
 
 const Input: React.FC<InputProps> = ({
   type = "text",
-  placeholder,
+  placeholder = `Enter ${type}`,
   variants = "Plain",
   states = "Normal",
   icon: Icon,
@@ -13,28 +12,25 @@ const Input: React.FC<InputProps> = ({
   onChange,
   isDisabled = false,
   dataTestId,
-  
 }) => {
-  
-  const buttonVariants =
-    variants === "Plain"
-      ? "buttonVariants-Plain"
-      : `buttonVariants-${variants}`;
-  const buttonStates =
-    states === "Normal" ? "buttonStates-Normal" : `buttonStates-${states}`;
-   
+  const inputVariants =
+    variants === "Plain" ? "inputVariants-Plain" : `inputVariants-${variants}`;
+  const inputStates =
+    states === "Normal" ? "inputStates-Normal" : `inputStates-${states}`;
 
   return (
     <>
-      
-      <div className={['input',buttonVariants, buttonStates].join(" ")}>
+      <div
+        className={["input", inputVariants, inputStates].join(" ")}
+        data-testId="container-div"
+      >
         {Icon && iconPosition === "Start" && <Icon />}
         <input
           type={type}
           placeholder={placeholder}
           disabled={isDisabled}
           onChange={onChange}
-          data-testId={dataTestId} 
+          data-testId={dataTestId}
         />
         {Icon && iconPosition === "End" && <Icon />}
       </div>

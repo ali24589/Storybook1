@@ -3,7 +3,7 @@
   outline: 0px;
   background: none;
 }
-.buttonVariants-Rounded {
+.inputVariants-Rounded {
   border: 1px solid;
   border-radius:45px;
   padding: 8px;
@@ -14,7 +14,7 @@
   align-items: center;
   justify-content: center;
 }
-.buttonVariants-Plain {
+.inputVariants-Plain {
   border: 1px solid;
   padding: 8px;
   outline: none;
@@ -24,17 +24,17 @@
   align-items: center;
 }
 
-.buttonStates-Hover:hover {
+.inputStates-Hover:hover {
   background-color: lightgray;
 }
-.buttonStates-Error {
+.inputStates-Error {
   border-color: red;
   color: red;
 }
-.buttonStates-Valid {
+.inputStates-Valid {
   border-color: lightgreen;
   color: lightgreen;
 }
-.buttonStates-Focus {
+.inputStates-Focus {
   background-color: lightgray;
 }
